@@ -1,0 +1,1 @@
+glslLangValidator is used by Visual Studio code for å kunne linte GLSL kode.

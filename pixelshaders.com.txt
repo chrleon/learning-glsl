@@ -1,0 +1,105 @@
+from http://pixelshaders.com/sample/
+
+///////////////////////////////////
+// blue gradient from top to bottom
+///////////////////////////////////
+
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = 0.0;
+  gl_FragColor.g = 0.0;
+  gl_FragColor.b = 0.0 + position.y;
+  gl_FragColor.a = 1.0;
+}
+
+
+//////////////////////////////////////////////
+// left to right gradient from black to yellow
+//////////////////////////////////////////////
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = position.x;
+  gl_FragColor.g = position.x;
+  gl_FragColor.b = 0.0;
+  gl_FragColor.a = 1.0;
+}
+
+
+/////////////////////////////////////////////////////
+// vertical blue and horizontal red gradient combined
+/////////////////////////////////////////////////////
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = 0.0 + position.x;
+  gl_FragColor.g = 0.0;
+  gl_FragColor.b = (0.0 + position.y);
+  gl_FragColor.a = 1.0;
+}
+
+
+///////////////////////////////////
+// blue gradient from bottom to top
+///////////////////////////////////
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = 0.0;
+  gl_FragColor.g = 0.0;
+  gl_FragColor.b = 1.0-position.y;
+  gl_FragColor.a = 1.0;
+}
+
+
+///////////////////////////////////////
+// red/blue gradient from left to right
+///////////////////////////////////////
+
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.b = 0.0 + position.x;
+  //gl_FragColor.g = 1.0 - position.x;
+  gl_FragColor.r = 1.0 - position.x;
+  gl_FragColor.a = 1.0;
+}
+
+
+//////////////////////////////////////////////
+// red gradient from upper right to lower left
+//////////////////////////////////////////////
+
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = (position.x/2.0) + (position.y/2.0);
+  gl_FragColor.a = 1.;
+}
+
+
+//////////////////////////////////////////////
+// red gradient from lower right to upper left
+//////////////////////////////////////////////
+
+precision mediump float;
+
+varying vec2 position;
+
+void main() {
+  gl_FragColor.r = 1.0 - (1.0 - position.x + position.y) / 2.0;
+  gl_FragColor.a = 1.0;
+}
